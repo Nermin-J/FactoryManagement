@@ -1,44 +1,39 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">FactoryManagement</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
-          </li>
-        </ul>
-      </div>
+  <nav class="sticky-top navbar-expand-lg navbar"
+       style="border-bottom:1px solid rgb(161,161,161)">
+    <a class="navbar-brand"
+       [routerLink]="['/']">
+      <img src="assets/img/DigitalFactory.jpg"
+           style="max-height:60px; margin-right:5px;">
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+            aria-label="Toggle navigation"
+            [attr.aria-expanded]="isExpanded"
+            (click)="toggle()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+         [ngClass]="{ show: isExpanded }">
+      <ul class="navbar-nav flex-grow">
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLinkActive="active-link"
+             [routerLink]="['/home']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLinkActive="active-link"
+             [routerLink]="['/users']">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLinkActive="active-link"
+             [routerLink]="['/reporting']">Reporting</a>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
